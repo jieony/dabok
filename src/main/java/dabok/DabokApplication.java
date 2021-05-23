@@ -1,4 +1,4 @@
-package com.example.dabok;
+package dabok;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

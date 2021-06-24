@@ -5,6 +5,8 @@ import lombok.Setter;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Getter @Setter
@@ -12,11 +14,11 @@ public class Customer {
 
     @Id
     @GeneratedValue
-    @Column(name = "customer_code")
-    private Long customerCd;
+    @Column(name = "customer_id")
+    private Long customerId;
 
     @OneToMany(mappedBy = "customer")
-    private Order order;
+    private List<Order> orderList = new ArrayList<>();
 
     private String name;
 
@@ -41,6 +43,6 @@ public class Customer {
 
     private LocalDateTime birthday;
 
-    private String profileUrl;  // [확인필요] 이미지 테이블 분리여부
+    private String profileUrl;  // [수정예정] 이미지테이블 분리
 
 }

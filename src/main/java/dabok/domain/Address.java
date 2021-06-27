@@ -10,11 +10,11 @@ import javax.persistence.Embeddable;
 @Getter
 public class Address {
 
-    private String street;
+    private String street;  // 도로명
 
-    private String detail;
+    private String detail;  // 상세주소
 
-    private String zipcode;
+    private String zipcode; // 우편번호
 
     protected Address(){
     }

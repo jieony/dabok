@@ -14,11 +14,14 @@ public class Customer {
 
     @Id
     @GeneratedValue
-    @Column(name = "customer_id")
-    private Long customerId;
+    @Column(name = "customer_code")
+    private Long customerCode;
 
     @OneToMany(mappedBy = "customer")
     private List<Order> orderList = new ArrayList<>();
+
+    @OneToMany(mappedBy = "customer")
+    private List<DeliveryAddress> deliveryAddressList = new ArrayList<>();
 
     private String name;
 
@@ -43,6 +46,7 @@ public class Customer {
 
     private LocalDateTime birthday;
 
-    private String profileUrl;  // [수정예정] 이미지테이블 분리
+    @Embedded
+    private Image image;  // 사용자프로필이미지
 
 }
